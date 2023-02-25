@@ -4,17 +4,18 @@
  * @return {number[]}
  */
 function twoSum(nums, target) {
-    // let result = [];  
-  
-    // for(let i = 0; i < nums.length; i++) {
-    //     for(let j = i + 1; j < nums.length; j++) {
-    //         if(nums[i] + nums[j] === target) {
-    //         result.push(nums[i], nums[j])
-    //         } 
-    //     }
-    // }
-    // console.log(result)
-};
+    let resultObject = {}
+    for (let eachNum in nums) {
+        let otherNum = target - nums[eachNum]
+        if (otherNum in resultObject) {
+            let resultsArray = []
+            resultsArray.push(otherNum, nums[eachNum])
+            return resultsArray
+        }
+        resultObject[nums[eachNum]] = eachNum
+    }
+    return "No two sum solution"
+}
 
 // twoSum([-1, -3, -5, -6], -8);
 twoSum([1, 3, 5, 6], 4);
