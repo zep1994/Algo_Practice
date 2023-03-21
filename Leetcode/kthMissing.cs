@@ -1,9 +1,14 @@
 using System;
-class Program
+
+namespace GettingInput
 {
-  static void Main(string[] args)
+  class Program
   {
-      Console.WriteLine("Hello World");
+    static void Main()
+    {
+      Console.WriteLine("How old are you?");
+      string input = Console.ReadLine();
+      Console.WriteLine($"You are {input} years old!");
+    }
   }
 }
-  
